@@ -1,0 +1,11 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/tylermcginnis/wyr-fsr.git
+	branch = master
+	commit = d4d8d858642c90fbee00a624399f5c5bb479a170
+	parent = 4660892d660591098ea69a96f77477e936519479
+	cmdver = 0.3.0

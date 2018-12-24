@@ -1,0 +1,24 @@
+{
+  "name": "basics",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "concurrently": "3.4.0",
+    "react-scripts": "0.9.5",
+    "fsr-helpers": "file:../../fsr-helpers"
+  },
+  "dependencies": {
+    "history": "4.3.0",
+    "prop-types": "15.5.10",
+    "react": "15.5.4",
+    "react-dom": "15.5.4",
+    "react-router-dom": "4.1.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "eject": "react-scripts eject",
+    "e2e": "nightwatch",
+    "run-e2e": "./node_modules/.bin/concurrently -k 'npm start' 'npm run e2e'"
+  }
+}
