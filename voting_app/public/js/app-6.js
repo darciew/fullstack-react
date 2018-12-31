@@ -31,8 +31,9 @@ class ProductList extends React.Component {
 
 class Product extends React.Component {
   constructor(props) {
-    super(props);
+    super(props); // always call this first
 
+    // custom method bindings here
     this.handleUpVote = this.handleUpVote.bind(this);
   }
 
