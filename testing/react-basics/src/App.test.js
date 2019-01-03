@@ -39,5 +39,10 @@ describe('App', () => {
     it('should update the state property `item`', () => {
       expect(wrapper.state().item).toEqual(item);
     });
+
+    it('should enable `button`', () => {
+      const button = wrapper.find('button').first();
+      expect(button.props().disabled).toEqual(false);
+    });
   });
 });
