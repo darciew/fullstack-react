@@ -15,4 +15,9 @@ describe('App', () => {
     const wrapper = shallow(<App />);
     expect(wrapper.containsMatchingElement(<button>Add item</button>)).toBe(true);
   });
+
+  it('should have an `input` element', () => {
+    const wrapper = shallow(<App />);
+    expect(wrapper.containsMatchingElement(<input />)).toBe(true);
+  });
 });
