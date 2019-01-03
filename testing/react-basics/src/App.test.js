@@ -25,4 +25,19 @@ describe('App', () => {
   it('should have an `input` element', () => {
     expect(wrapper.containsMatchingElement(<input />)).toBe(true);
   });
+
+  describe('the user populates the input', () => {
+    const item = 'London';
+
+    beforeEach(() => {
+      const input = wrapper.find('input').first();
+      input.simulate('change', {
+        target: { value: item }
+      })
+    });
+
+    it('should update the state property `item`', () => {
+      expect(wrapper.state().item).toEqual(item);
+    });
+  });
 });
