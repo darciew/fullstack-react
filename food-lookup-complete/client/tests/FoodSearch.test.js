@@ -19,6 +19,10 @@ describe('FoodSearch', () => {
     expect(wrapper.find('tbody tr').length).toBe(0);
   })
 
+  it('should have an `input` element', () => {
+    expect(wrapper.containsMatchingElement(<input />)).toBe(true);
+  })
+
   describe('user populates search field', () => {
     beforeEach(() => {
       // ... simulate user typing "brocc" in input
