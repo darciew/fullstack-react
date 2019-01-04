@@ -5,7 +5,15 @@ import React from 'react';
 import FoodSearch from '../src/FoodSearch';
 
 describe('FoodSearch', () => {
-  // ... initial state specs
+  let wrapper;
+
+  beforeEach(() => {
+    wrapper = shallow(<FoodSearch />);
+  });
+
+  it('should not display the remove icon', () => {
+    expect(wrapper.find('.remove icon').length).toBe(0);
+  });
 
   describe('user populates search field', () => {
     beforeEach(() => {
