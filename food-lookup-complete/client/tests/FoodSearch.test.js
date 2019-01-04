@@ -37,6 +37,10 @@ describe('FoodSearch', () => {
       expect(wrapper.state().searchValue).toEqual(value);
     });
 
+    it('should display the remove icon', () => {
+      expect(wrapper.find('.remove.icon').length).toBe(1);
+    });
+
     describe('and API returns results', () => {
       beforeEach(() => {
         // ... simulate API returning results
