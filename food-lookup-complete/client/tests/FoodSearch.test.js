@@ -24,11 +24,18 @@ describe('FoodSearch', () => {
   })
 
   describe('user populates search field', () => {
+    const value = 'brocc';
+
     beforeEach(() => {
-      // ... simulate user typing "brocc" in input
+      const input = wrapper.find('input').first();
+      input.simulate('change', {
+        target: { value: value },
+      });
     });
 
-    // ... specs
+    it('should update state property `searchValue`', () => {
+      expect(wrapper.state().searchValue).toEqual(value);
+    });
 
     describe('and API returns results', () => {
       beforeEach(() => {
