@@ -74,6 +74,11 @@ describe('App', () => {
       it('should render the item in the table', () => {
         expect(wrapper.containsMatchingElement(<td>{item}</td>)).toBe(true);
       });
+
+      it('should clear the input field', () => {
+        const input = wrapper.find('input').first();
+        expect(input.props().value).toEqual('');
+      });
     });
   });
 });
