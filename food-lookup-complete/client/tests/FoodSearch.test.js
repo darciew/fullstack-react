@@ -113,16 +113,26 @@ describe('FoodSearch', () => {
       });
 
       describe('then user types more', () => {
+        const value = 'broccx';
+
         beforeEach(() => {
-          // ... simulate user typing "x"
+          const input = wrapper.find('input').first();
+          input.simulate('change', {
+            target: { value: value },
+          });
         });
 
         describe('and API returns no results', () => {
           beforeEach(() => {
-            // ... simulate API returning no results
+            const secondInvocationArgs = Client.search.mock.calls[1]; // [ 'broccx', [Function] ]
+            const cb = secondInvocationArgs[1]; // [Function]
+            cb([]); // invoke with blank array
+            wrapper.update();
           });
 
-          // ... specs
+          it('should set the state property `foods`', () => {
+            expect(wrapper.state().foods).toEqual([]);
+          });
         });
       });
     });
