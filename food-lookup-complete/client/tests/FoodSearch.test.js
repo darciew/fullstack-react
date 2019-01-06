@@ -54,11 +54,32 @@ describe('FoodSearch', () => {
     })
 
     describe('and API returns results', () => {
+      const foods = [
+        {
+          description: 'Broccolini',
+          kcal: '100',
+          protein_g: '11',
+          fat_g: '21',
+          carbohydrate_g: '31',
+        },
+        {
+          description: 'Broccoli rabe',
+          kcal: '200',
+          protein_g: '12',
+          fat_g: '22',
+          carbohydrate_g: '32',
+        },
+      ];
       beforeEach(() => {
-        // ... simulate API returning results
+        const invocationArgs = Client.search.mock.calls[0];
+        const cb = invocationArgs[1];
+        cb(foods);
+        wrapper.update();
       });
 
-      // ... specs
+      it('should set the state property of `foods`', () => {
+        expect(wrapper.state().foods).toEqual(foods);
+      });
 
       describe('then user clicks food item', () => {
         beforeEach(() => {
