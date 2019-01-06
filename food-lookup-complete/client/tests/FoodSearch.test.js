@@ -81,6 +81,10 @@ describe('FoodSearch', () => {
         expect(wrapper.state().foods).toEqual(foods);
       });
 
+      it('should display two rows', () => {
+        expect(wrapper.find('tbody tr').length).toEqual(2);
+      })
+
       describe('then user clicks food item', () => {
         beforeEach(() => {
           // ... simulate user clicking food item
