@@ -83,7 +83,15 @@ describe('FoodSearch', () => {
 
       it('should display two rows', () => {
         expect(wrapper.find('tbody tr').length).toEqual(2);
-      })
+      });
+
+      it('should render description of first food', () => {
+        expect(wrapper.html()).toContain(foods[0].description);
+      });
+
+      it('should render description of second food', () => {
+        expect(wrapper.html()).toContain(foods[1].description);
+      });
 
       describe('then user clicks food item', () => {
         beforeEach(() => {
