@@ -5,7 +5,7 @@
   "proxy": "http://localhost:3001/",
   "devDependencies": {
     "enzyme": "2.8.2",
-    "react-scripts": "0.9.5",
+    "react-scripts": "5.0.1",
     "react-test-renderer": "15.5.4"
   },
   "dependencies": {
